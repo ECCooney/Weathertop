@@ -9,6 +9,12 @@ public class ReadingConversions{
         return temperature;
     }
 
+    public static double windChill(double temperature, double windSpeed){
+        double chill = 13.12 + 0.6215*temperature -  11.37* Math.pow(windSpeed, 0.16)
+                + 0.3965*temperature*Math.pow(windSpeed, 0.16);
+        return chill;
+    }
+
     public static String weatherConditions(int code) {
         String conditions = null;
         switch (code) {
@@ -84,5 +90,61 @@ public class ReadingConversions{
         }
 
         return beauf;
+    }
+
+    public static String windDirect(double windDirection) {
+        String direction = null;
+        if ((windDirection>=347.75 &&windDirection<=360.00) || windDirection<11.25) {
+            direction = "North";
+        }
+        else if(windDirection>=11.25 && windDirection<33.75){
+            direction = "North North East";
+        }
+        else if(windDirection>=33.75 && windDirection<56.25){
+            direction = "North East";
+        }
+        else if(windDirection>=56.25 && windDirection<78.75){
+            direction = "East North East";
+        }
+        else if(windDirection>=78.75 && windDirection<101.25){
+            direction = "East";
+        }
+        else if(windDirection>=101.25 && windDirection<123.75){
+            direction = "East South East";
+        }
+        else if(windDirection>=123.75 && windDirection<146.25){
+            direction = "South East";
+        }
+        else if(windDirection>=146.25 && windDirection<168.75){
+            direction = "South South East";
+        }
+        else if(windDirection>=168.75 && windDirection<191.25){
+            direction = "South";
+        }
+        else if(windDirection>=191.25 && windDirection<213.75){
+            direction = "South South West";
+        }
+        else if(windDirection>=213.75 && windDirection<236.25){
+            direction = "South West";
+        }
+        else if(windDirection>=236.25 && windDirection<258.75){
+            direction = "West South West";
+        }
+        else if(windDirection>=258.75 && windDirection<281.25){
+            direction = "West";
+        }
+        else if(windDirection>=281.25 && windDirection<303.75){
+            direction = "West North West";
+        }
+        else if(windDirection>=303.75 && windDirection<326.25){
+            direction = "North West";
+        }
+        else if(windDirection>=326.25 && windDirection<348.75){
+            direction = "North North West";
+        }
+        else{
+            direction = "Wind Direction not Available";
+        }
+        return direction;
     }
 }

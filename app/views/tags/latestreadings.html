@@ -1,5 +1,10 @@
 <section>
-    <div class = "ui four statistics">
+    <div class = "ui five statistics">
+        <div class="statistic">
+            <div class="text value">
+                ${_station.name}
+            </div>
+        </div>
         <div class="statistic">
             <div class="text value">
                 Weather
@@ -25,6 +30,12 @@
             </div>
             <div class="label">
                 ${_station.newestReading()?.getBeaufort()} bft
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.getWindDirection()}
+            </div>
+            <div class="label">
+               Feels Like ${_station.newestReading()?.getWindChill().round(1)}
             </div>
         </div>
         <div class="statistic">

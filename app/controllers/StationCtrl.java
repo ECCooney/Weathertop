@@ -14,9 +14,9 @@ public class StationCtrl extends Controller
         render("station.html", station);
     }
 
-    public static void addReading(Long id, int code, double temperature, double windSpeed, int pressure)
+    public static void addReading(Long id, int code, double temperature, double windSpeed, double windDirection, int pressure)
     {
-        Reading reading = new Reading(id, code, temperature, windSpeed, pressure);
+        Reading reading = new Reading(id, code, temperature, windSpeed, windDirection, pressure);
         Station station = Station.findById(id);
         station.readings.add(reading);
         station.save();
