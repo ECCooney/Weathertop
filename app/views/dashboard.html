@@ -1,0 +1,16 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+<!--cycles through arraylist of stations-->
+#{list items:stations, as:'station'}
+<section class="ui segment">
+    <h2 class="ui header">
+        <a href="/stations/${station.id}"> ${station.name}</a>
+    </h2>
+    #{latestReadings station:station/}
+    #{listReadings station:station/}
+</section>
+#{/list}
+#{addstation /}

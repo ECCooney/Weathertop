@@ -1,0 +1,39 @@
+<section>
+    <div class = "ui four statistics">
+        <div class="statistic">
+            <div class="text value">
+                Weather
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.getConditions()}
+            </div>
+        </div>
+        <div class="statistic">
+            <div class="text value">
+                Temperature
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.temperature} C
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.getTempFaren()} F
+            </div>
+        </div>
+        <div class="statistic">
+            <div class="text value">
+                Wind
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.getBeaufort()} bft
+            </div>
+        </div>
+        <div class="statistic">
+            <div class="text value">
+                Pressure
+            </div>
+            <div class="label">
+                ${_station.newestReading()?.pressure} hpa
+            </div>
+        </div>
+    </div>
+</section>
