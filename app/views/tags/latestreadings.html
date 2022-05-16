@@ -1,50 +1,48 @@
 <section>
-    <div class = "ui five statistics">
-        <div class="statistic">
-            <div class="text value">
-                ${_station.name}
+    <br>
+    <div class="ui five column grid">
+        <div class="stretched row">
+            <div class="column">
+                <div class="ui blue inverted segment">
+                    <h3>${_station.name}<i class="big map marker alternate icon"></i></h3>
+                    <p>Lat: ${_station.latitude}</p>
+                    <p>Long: ${_station.longitude}</p>
+                    <br>
+                </div>
             </div>
-        </div>
-        <div class="statistic">
-            <div class="text value">
-                Weather
+            <div class="column">
+                <div class="ui blue inverted segment">
+                    <h3>Weather<i class="${_station.newestReading()?.getIcons()}"></i></h3>
+                    <p>${_station.newestReading()?.getConditions()}</p>
+                    <br>
+                    <br>
+                </div>
             </div>
-            <div class="label">
-                ${_station.newestReading()?.getConditions()}
+            <div class="column">
+                <div class="ui blue inverted segment">
+                    <h3>Temperature<i class="big thermometer half icon"></i></h3>
+                    <p>${_station.newestReading()?.temperature} C</p>
+                    <p>${_station.newestReading()?.getTempFaren()} F</p>
+                    <br>
+                </div>
             </div>
-        </div>
-        <div class="statistic">
-            <div class="text value">
-                Temperature
+            <div class="column">
+                <div class="ui blue inverted segment">
+                    <h3>Wind <i class="big wind icon"></i></h3>
+                    <p>${_station.newestReading()?.getBeaufort()} bft</p>
+                    <p>${_station.newestReading()?.getWindDirect()}</p>
+                    <p>Feels Like ${_station.newestReading()?.getWindChill()}</p>
+                </div>
             </div>
-            <div class="label">
-                ${_station.newestReading()?.temperature} C
-            </div>
-            <div class="label">
-                ${_station.newestReading()?.getTempFaren()} F
-            </div>
-        </div>
-        <div class="statistic">
-            <div class="text value">
-                Wind
-            </div>
-            <div class="label">
-                ${_station.newestReading()?.getBeaufort()} bft
-            </div>
-            <div class="label">
-                ${_station.newestReading()?.getWindDirection()}
-            </div>
-            <div class="label">
-               Feels Like ${_station.newestReading()?.getWindChill()}
-            </div>
-        </div>
-        <div class="statistic">
-            <div class="text value">
-                Pressure
-            </div>
-            <div class="label">
-                ${_station.newestReading()?.pressure} hpa
+            <div class="column">
+                <div class="ui blue inverted segment">
+                    <h3>Pressure<i class="big compress arrows alternate icon"></i></h3>
+                    <p>${_station.newestReading()?.pressure} hpa</p>
+                    <br>
+                    <br>
+                </div>
             </div>
         </div>
     </div>
+    <br>
 </section>

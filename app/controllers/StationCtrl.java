@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Member;
 import models.Station;
 import models.Reading;
 import play.Logger;

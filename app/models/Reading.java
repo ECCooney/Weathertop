@@ -24,7 +24,7 @@ public class Reading extends Model {
 
     public double getTempFaren(){
         return ReadingConversions.tempFaren(temperature);
-        }
+    }
 
     public int getBeaufort(){
         return ReadingConversions.beaufort(windSpeed);
@@ -32,9 +32,13 @@ public class Reading extends Model {
 
     public String getConditions(){
         return ReadingConversions.weatherConditions(code);
-        }
+    }
 
-    public String getWindDirection(){
+    public String getIcons() {
+        return ReadingConversions.weatherIcon(code);
+    }
+
+    public String getWindDirect() {
         return ReadingConversions.windDirect(windDirection);
     }
 
