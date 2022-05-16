@@ -8,9 +8,11 @@
 <section class="ui segment">
     <h2 class="ui header">
         <a href="/stations/${station.id}"> ${station.name}</a>
+        <br>
+        <a href="/stations/${station.id}" class="ui icon button">
+            <i class="icon folder open"></i>
+        </a>
     </h2>
-    #{latestReadings station:station/}
-    #{listReadings station:station/}
 </section>
 #{/list}
 #{addstation /}
