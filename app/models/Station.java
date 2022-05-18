@@ -31,6 +31,19 @@ public class Station extends Model {
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
+    public String getName(){
+        return name;
+    }
+
+/*min max variables*/
+    public double minTemp;
+    public double maxTemp;
+    public double maxPressure;
+    public double minPressure;
+    public double maxWind;
+    public double minWind;
+
 }
 
 

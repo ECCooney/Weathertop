@@ -1,8 +1,24 @@
 package utils;
 
 import models.Reading;
+import models.Station;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReadingConversions {
+
+  public static double minMaxValues (Station stations){
+    if (stations.readings.size() > 0) {
+      stations.maxTemp = MinMaxReadings.getMaxTemp(stations);
+      stations.minTemp = MinMaxReadings.getMinTemp(stations);
+      stations.maxWind = MinMaxReadings.getMaxWind(stations);
+      stations.minWind = MinMaxReadings.getMinWind(stations);
+      stations.maxPressure = MinMaxReadings.getMaxPressure(stations);
+      stations.minPressure = MinMaxReadings.getMinPressure(stations);
+    }
+    return stations.maxTemp;
+  }
 
   public static double toTwoDecimalPlaces(double num) {
     return (int) (num * 100) / 100.0;

@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 
 import play.db.jpa.Model;
 import utils.ReadingConversions;
+import java.util.Collections;
+import java.util.Comparator;
 
 @Entity
 
@@ -22,9 +24,7 @@ public class Reading extends Model {
         this.pressure = pressure;
     }
 
-    public double getTempFaren(){
-        return ReadingConversions.tempFaren(temperature);
-    }
+    public double getTempFaren(){ return ReadingConversions.tempFaren(temperature);}
 
     public int getBeaufort(){
         return ReadingConversions.beaufort(windSpeed);
@@ -43,9 +43,8 @@ public class Reading extends Model {
     }
 
     public double getWindChill(){
-        return ReadingConversions.windChill(temperature, windSpeed);
+        return ReadingConversions.windChill(temperature, windSpeed);}
+
     }
 
-
-}
 
