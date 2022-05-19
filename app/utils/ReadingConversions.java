@@ -1,23 +1,22 @@
 package utils;
 
-import models.Reading;
-import models.Station;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class ReadingConversions {
 
-  public static double minMaxValues (Station stations){
-    if (stations.readings.size() > 0) {
-      stations.maxTemp = MinMaxReadings.getMaxTemp(stations);
-      stations.minTemp = MinMaxReadings.getMinTemp(stations);
-      stations.maxWind = MinMaxReadings.getMaxWind(stations);
-      stations.minWind = MinMaxReadings.getMinWind(stations);
-      stations.maxPressure = MinMaxReadings.getMaxPressure(stations);
-      stations.minPressure = MinMaxReadings.getMinPressure(stations);
-    }
-    return stations.maxTemp;
+  public static double shortLat(double latitude){
+    double latitde = latitude;
+    DecimalFormat df = new DecimalFormat("##.###");
+    df.setRoundingMode(RoundingMode.CEILING);
+    return latitde;
+  }
+
+  public static double shortLong(double longitude){
+    double longitde = longitude;
+    DecimalFormat df = new DecimalFormat("##.###");
+    df.setRoundingMode(RoundingMode.CEILING);
+    return longitde;
   }
 
   public static double toTwoDecimalPlaces(double num) {

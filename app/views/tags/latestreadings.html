@@ -5,8 +5,8 @@
             <div class="column">
                 <div class="ui blue inverted segment">
                     <h3>${_station.name}<i class="big map marker alternate icon"></i></h3>
-                    <p>Lat: ${_station.latitude}</p>
-                    <p>Long: ${_station.longitude}</p>
+                    <p>Lat: ${_station.shortLat()}</p>
+                    <p>Long: ${_station.shortLong()}</p>
                     <br>
                 </div>
             </div>
@@ -23,28 +23,28 @@
                     <h3>Temperature<i class="big thermometer half icon"></i></h3>
                     <p>${_station.newestReading()?.temperature} C</p>
                     <p>${_station.newestReading()?.getTempFaren()} F</p>
-                    <p>Max ${_station.maxTemp}</p>
-                    <p>Min ${_station.minTemp}</p>
+                    <p>Max ${_station.maxTemps()?.temperature}</p>
+                    <p>Min ${_station.minTemps()?.temperature}</p>
 
                     <br>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">
+                <div class="ui blue inverted segment">>
                     <h3>Wind <i class="big wind icon"></i></h3>
                     <p>${_station.newestReading()?.getBeaufort()} bft</p>
                     <p>${_station.newestReading()?.getWindDirect()}</p>
                     <p>Feels Like ${_station.newestReading()?.getWindChill()}</p>
-                    <p>Max ${_station.maxWind}</p>
-                    <p>Min ${_station.minWind}</p>
+                    <p>Max ${_station.maxWinds()?.windSpeed}</p>
+                    <p>Min ${_station.minWinds()?.windSpeed}</p>
                 </div>
             </div>
             <div class="column">
                 <div class="ui blue inverted segment">
                     <h3>Pressure<i class="big compress arrows alternate icon"></i></h3>
                     <p>${_station.newestReading()?.pressure} hpa</p>
-                    <p>Max ${_station.maxPressure}</p>
-                    <p>Min ${_station.minPressure}</p>
+                    <p>Max ${_station.maxPressures()?.pressure}</p>
+                    <p>Min ${_station.minPressures()?.pressure}</p>
                     <br>
                     <br>
                 </div>

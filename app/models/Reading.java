@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 
 import play.db.jpa.Model;
 import utils.ReadingConversions;
-import java.util.Collections;
-import java.util.Comparator;
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 @Entity
 
@@ -14,15 +16,22 @@ public class Reading extends Model {
     public double temperature;
     public double windSpeed;
     public double windDirection;
-    public int pressure;
+    public double pressure;
+    public Date date;
 
-    public Reading(Long id, int code, double temperature, double windSpeed, double windDirection, int pressure) {
+
+    public Reading(Long id, int code, double temperature, double windSpeed, double windDirection, double pressure) {
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;
         this.windDirection = windDirection;
         this.pressure = pressure;
+        this.date = date;
     }
+
+    /*public LocalDateTime date = LocalDateTime.now();*/
+
+    /*methods for calling reading conversion calculations in views*/
 
     public double getTempFaren(){ return ReadingConversions.tempFaren(temperature);}
 
@@ -46,5 +55,7 @@ public class Reading extends Model {
         return ReadingConversions.windChill(temperature, windSpeed);}
 
     }
+
+
 
 

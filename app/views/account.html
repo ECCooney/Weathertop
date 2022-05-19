@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Account' /}
+
+#{menu id:"account"/}
+
+<section class="ui segment">
+    <h2 class="ui header">
+        Account Details
+    </h2>
+    <p>${member.firstname} ${member.lastname}</p>
+    <p>${member.email}</p>
+</section>

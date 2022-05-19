@@ -1,75 +1,58 @@
 package utils;
 
 import models.Reading;
-import models.Station;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MinMaxReadings {
 
- public static double getMaxTemp(Station station) {
-
-    double maxT = 0;
-    for (Reading reading : station.readings) {
-      if (reading.temperature > maxT) {
-        maxT = reading.temperature;
-      }
+  public static Reading getMaxTemp(List<Reading> readings) {
+    Reading maxTemp = null;
+    if (readings.size() > 0) {
+      maxTemp = Collections.max
+          (readings, Comparator.comparing(reading -> reading.temperature));
     }
-   return maxT;
- }
-
-  public static double getMinTemp(Station stations) {
-    double minT = 0;
-    for (Reading reading : stations.readings) {
-      if (reading.temperature < minT) {
-        minT = reading.temperature;
-      }
-    }
-    return minT;
+    return maxTemp;
   }
 
-  public static double getMaxWind(Station station) {
-
-    double maxW = 0;
-    for (Reading reading : station.readings) {
-      if (reading.windSpeed > maxW) {
-        maxW = reading.windSpeed;
-      }
+  public static Reading getMinTemp(List<Reading> readings){
+    Reading minTemp = null;
+    if (readings.size()>0) {
+     minTemp = Collections.min
+        (readings, Comparator.comparing(reading -> reading.temperature));
     }
-    return maxW;
+    return minTemp;
   }
 
-  public static double getMinWind(Station stations) {
-    double minW = 0;
-    for (Reading reading : stations.readings) {
-      if (reading.windSpeed < minW) {
-        minW = reading.windSpeed;
-      }
+  public static Reading getMaxWind(List<Reading> readings){
+    Reading maxWind = null;
+    if (readings.size()>0) {
+      maxWind = Collections.max
+          (readings, Comparator.comparing(reading -> reading.windSpeed));
     }
-    return minW;
+    return maxWind;
   }
 
-  public static double getMaxPressure(Station station) {
-
-    double maxP = 0;
-    for (Reading reading : station.readings) {
-      if (reading.pressure > maxP) {
-        maxP = reading.pressure;
-      }
+  public static Reading getMinWind(List<Reading> readings){
+    Reading minWind = null;
+    if (readings.size()>0) {
+      minWind = Collections.min
+          (readings, Comparator.comparing(reading -> reading.windSpeed));
     }
-    return maxP;
+      return minWind;
   }
 
-  public static double getMinPressure(Station stations) {
-    double minP = 0;
-    for (Reading reading : stations.readings) {
-      if (reading.pressure < minP) {
-        minP = reading.pressure;
-      }
-    }
-    return minP;
+  public static Reading getMaxPressure(List<Reading> readings){
+    Reading maxPressure = Collections.max
+        (readings, Comparator.comparing(reading -> reading.pressure));
+    return maxPressure;
   }
 
+  public static Reading getMinPressure(List<Reading> readings){
+    Reading minPressure = Collections.min
+        (readings, Comparator.comparing(reading -> reading.pressure));
+    return minPressure;
+  }
 }

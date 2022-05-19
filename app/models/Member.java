@@ -15,16 +15,19 @@ public class Member extends Model
     public String lastname;
     public String email;
     public String password;
+    public String profileImage;
 
     @OneToMany(cascade = CascadeType.ALL)
+
     public List<Station> stations = new ArrayList<Station>();
 
-    public Member(String firstname, String lastname, String email, String password)
+    public Member(String firstname, String lastname, String email, String password, String profileImage)
     {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
+        this.profileImage = profileImage;
     }
 
     public static Member findByEmail(String email)
