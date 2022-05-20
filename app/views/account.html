@@ -10,3 +10,30 @@
     <p>${member.firstname} ${member.lastname}</p>
     <p>${member.email}</p>
 </section>
+
+<div class="ui two column middle aligned grid basic segment">
+    <div class="column">
+        <form class="ui stacked segment form" action="/editMember" method="POST">
+            <h3 class="ui header">Update Account Details</h3>
+            <div class="two fields">
+            <div class="field">
+                <label>New First Name</label>
+                <input placeholder="${member.firstname}" type="text" name="firstname">
+            </div>
+            <div class="field">
+                <label>New Last Name</label>
+                <input placeholder="${member.lastname}" type="text" name="lastname">
+            </div>
+        </div>
+            <div class="field">
+                <label>New Email</label> <input placeholder="${member.email}" name="email">
+            </div>
+            <div class="field">
+                <label>Password</label> <input type="${member.password}" name="password">
+            </div>
+            <button class="ui blue submit button">Update Details</button>
+        </form>
+    </div>
+    <div class="column">
+    </div>
+</div>

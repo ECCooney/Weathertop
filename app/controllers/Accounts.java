@@ -62,4 +62,13 @@ public class Accounts extends Controller {
         }
         return member;
     }
+
+    public static void editMember (String firstname, String lastname, String email, String password, String profileImage){
+        Member member = getLoggedInMember();
+        member.firstname = firstname;
+        member.lastname = lastname;
+        member.email = email;
+        member.save();
+        index();
+    }
 }
