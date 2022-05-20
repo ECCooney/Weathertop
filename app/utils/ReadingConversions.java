@@ -5,18 +5,18 @@ import java.text.DecimalFormat;
 
 public class ReadingConversions {
 
-  public static double shortLat(double latitude){
-    double latitde = latitude;
-    DecimalFormat df = new DecimalFormat("##.###");
-    df.setRoundingMode(RoundingMode.CEILING);
-    return latitde;
+  public static double toThreeDecimalPlaces(double num) {
+    return (int) (num * 1000) / 1000.0;
   }
 
-  public static double shortLong(double longitude){
+  public static double shortLat(double latitude){
+    double latitde = latitude;
+    return toThreeDecimalPlaces(latitde);
+  }
+
+  public static double shortLong(double longitude) {
     double longitde = longitude;
-    DecimalFormat df = new DecimalFormat("##.###");
-    df.setRoundingMode(RoundingMode.CEILING);
-    return longitde;
+    return toThreeDecimalPlaces(longitde);
   }
 
   public static double toTwoDecimalPlaces(double num) {
@@ -63,7 +63,7 @@ public class ReadingConversions {
         conditions = "Thunder";
         break;
       default:
-        conditions = "No Current Reading";
+        conditions = "No Current Valid Reading";
         break;
     }
     return conditions;

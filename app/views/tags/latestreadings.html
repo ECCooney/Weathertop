@@ -7,15 +7,12 @@
                     <h3>${_station.name}<i class="big map marker alternate icon"></i></h3>
                     <p>Lat: ${_station.shortLat()}</p>
                     <p>Long: ${_station.shortLong()}</p>
-                    <br>
                 </div>
             </div>
             <div class="column">
                 <div class="ui blue inverted segment">
                     <h3>Weather<i class="${_station.newestReading()?.getIcons()}"></i></h3>
                     <p>${_station.newestReading()?.getConditions()}</p>
-                    <br>
-                    <br>
                 </div>
             </div>
             <div class="column">
@@ -25,18 +22,18 @@
                     <p>${_station.newestReading()?.getTempFaren()} F</p>
                     <p>Max ${_station.maxTemps()?.temperature}</p>
                     <p>Min ${_station.minTemps()?.temperature}</p>
-
-                    <br>
+                    <i class="${_station.temperatureTrends()}"></i>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">>
+                <div class="ui blue inverted segment">
                     <h3>Wind <i class="big wind icon"></i></h3>
                     <p>${_station.newestReading()?.getBeaufort()} bft</p>
                     <p>${_station.newestReading()?.getWindDirect()}</p>
                     <p>Feels Like ${_station.newestReading()?.getWindChill()}</p>
                     <p>Max ${_station.maxWinds()?.windSpeed}</p>
                     <p>Min ${_station.minWinds()?.windSpeed}</p>
+                    <i class="${_station.windSpeedTrends()}"></i>
                 </div>
             </div>
             <div class="column">
@@ -45,8 +42,7 @@
                     <p>${_station.newestReading()?.pressure} hpa</p>
                     <p>Max ${_station.maxPressures()?.pressure}</p>
                     <p>Min ${_station.minPressures()?.pressure}</p>
-                    <br>
-                    <br>
+                    <i class="${_station.pressureTrends()}"></i>
                 </div>
             </div>
         </div>

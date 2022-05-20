@@ -6,6 +6,9 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class StationCtrl extends Controller
 {
     public static void index(Long id)
@@ -15,9 +18,9 @@ public class StationCtrl extends Controller
         render("station.html", station);
     }
 
-    public static void addReading(Long id, int code, double temperature, double windSpeed, double windDirection, double pressure)
-    {
-        Reading reading = new Reading(id, code, temperature, windSpeed, windDirection, pressure);
+    public static void addReading(Date date, Long id, int code, double temperature, double windSpeed, double windDirection, double pressure)
+    {   date = new Date();
+        Reading reading = new Reading(date, id, code, temperature, windSpeed, windDirection, pressure);
         Station station = Station.findById(id);
         station.readings.add(reading);
         station.save();

@@ -17,7 +17,7 @@ GET     /dashboard/deletestation/{id}           Dashboard.deleteStation
 
 GET     /about                                  About.index
 
-GET     /account                                Account.index
+GET     /account                                Accounts.index
 
 GET     /stations/{id}                           StationCtrl.index
 POST    /stations/{id}/addreading                StationCtrl.addReading

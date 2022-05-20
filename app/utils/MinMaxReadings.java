@@ -45,14 +45,20 @@ public class MinMaxReadings {
   }
 
   public static Reading getMaxPressure(List<Reading> readings){
-    Reading maxPressure = Collections.max
-        (readings, Comparator.comparing(reading -> reading.pressure));
+    Reading maxPressure = null;
+    if (readings.size()>0) {
+      maxPressure = Collections.max
+          (readings, Comparator.comparing(reading -> reading.pressure));
+    }
     return maxPressure;
   }
 
   public static Reading getMinPressure(List<Reading> readings){
-    Reading minPressure = Collections.min
-        (readings, Comparator.comparing(reading -> reading.pressure));
+    Reading minPressure = null;
+    if (readings.size()>0) {
+      minPressure = Collections.min
+          (readings, Comparator.comparing(reading -> reading.pressure));
+    }
     return minPressure;
   }
 }

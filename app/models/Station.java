@@ -16,6 +16,7 @@ import play.Logger;
 import play.db.jpa.Model;
 import utils.MinMaxReadings;
 import utils.ReadingConversions;
+import utils.Trends;
 
 @Entity
 
@@ -25,7 +26,7 @@ public class Station extends Model {
     public double longitude;
 
     @OneToMany(cascade = CascadeType.ALL)
-    public List<Reading> readings = new ArrayList<Reading>();
+    public List<Reading> readings = new ArrayList<>();
 
     public Reading newestReading() {
         Reading newestReading = null;
@@ -49,18 +50,17 @@ public class Station extends Model {
     }
 
     //methods for returning max and min values
-    public Reading maxTemps(){return MinMaxReadings.getMaxTemp(readings);
-    }
-    public Reading minTemps(){return MinMaxReadings.getMinTemp(readings);
-    }
-    public Reading maxWinds(){return MinMaxReadings.getMaxWind(readings);
-    }
-    public Reading minWinds(){return MinMaxReadings.getMinWind(readings);
-    }
-    public Reading maxPressures(){return MinMaxReadings.getMaxPressure(readings);
-    }
-    public Reading minPressures(){return MinMaxReadings.getMinPressure(readings);
-    }
+    public Reading maxTemps(){return MinMaxReadings.getMaxTemp(readings);}
+    public Reading minTemps(){return MinMaxReadings.getMinTemp(readings);}
+    public Reading maxWinds(){return MinMaxReadings.getMaxWind(readings);}
+    public Reading minWinds(){return MinMaxReadings.getMinWind(readings);}
+    public Reading maxPressures(){return MinMaxReadings.getMaxPressure(readings);}
+    public Reading minPressures(){return MinMaxReadings.getMinPressure(readings);}
+
+    //return trends
+    public String temperatureTrends(){return Trends.tempTrends(readings);}
+    public String windSpeedTrends(){return Trends.windTrends(readings);}
+    public String pressureTrends(){return Trends.pressureTrends(readings);}
 
 }
 

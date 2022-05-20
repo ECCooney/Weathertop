@@ -4,8 +4,14 @@ import models.Member;
 import play.Logger;
 import play.mvc.Controller;
 
-public class Accounts extends Controller
-{
+public class Accounts extends Controller {
+
+    public static void index() {
+        Logger.info("Rendering Member Account");
+        Member member = Accounts.getLoggedInMember();
+        render("account.html", member);
+    }
+
     public static void signup()
     {
         render("signup.html");
@@ -29,7 +35,7 @@ public class Accounts extends Controller
         Logger.info("Attempting to authenticate with " + email + ":" + password);
 
         Member member = Member.findByEmail(email);
-        if ((member != null) && (member.checkPassword(password) == true)) {
+        if ((member != null) && (member.checkPassword(password))) {
             Logger.info("Authentication successful");
             session.put("logged_in_Memberid", member.id);
             redirect ("/dashboard");
