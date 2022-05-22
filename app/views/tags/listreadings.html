@@ -1,4 +1,4 @@
-<table class="ui fixed table">
+<table class="ui fixed striped table">
     <thead>
     <tr>
         <th>Date/Time</th>
@@ -31,10 +31,10 @@
         <td>
             ${reading.pressure}
         </td>
-        <td>
-        <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui icon button">
-            <i class="big icon trash"></i>
-        </a>
+        <td class="centre aligned">
+            <a href="/stations/${_station.id}/deletereading/${reading.id}" class="ui centre aligned icon button">
+                <i class="big icon trash"></i>
+            </a>
         </td>
     </tr>
     #{/list}

@@ -18,7 +18,7 @@ public class Dashboard extends Controller {
     List<Station> stations = member.stations;
     stations.sort(Comparator.comparing(Station::getName));
     render("dashboard.html", member, stations);
-    }
+  }
 
   public static void addStation(String name, double latitude, double longitude) {
     Member member = Accounts.getLoggedInMember();

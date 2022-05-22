@@ -3,46 +3,76 @@
     <div class="ui five column grid">
         <div class="stretched row">
             <div class="column">
-                <div class="ui blue inverted segment">
-                    <h3>${_station.name}<i class="big map marker alternate icon"></i></h3>
-                    <p>Lat: ${_station.shortLat()}</p>
-                    <p>Long: ${_station.shortLong()}</p>
+                <div class="ui inverted teal card">
+                    <div class="content">
+                        <i class="right floated big inverted map marker alternate icon"></i>
+                        <div class="header">${_station.name}</div>
+                        <div class="ui section divider"></div>
+                        <div class="description">
+                            <p>Lat: ${_station.shortLat()}</p>
+                            <p>Long: ${_station.shortLong()}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">
-                    <h3>Weather<i class="${_station.newestReading()?.getIcons()}"></i></h3>
-                    <p>${_station.newestReading()?.getConditions()}</p>
+                <div class="ui teal card">
+                    <div class="content">
+                        <i class="right floated ${_station.newestReading()?.getIcons()}"></i>
+                        <div class="header">Weather</div>
+                        <div class="ui section divider"></div>
+                        <div class="description">
+                            <p>${_station.newestReading()?.getConditions()}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">
-                    <h3>Temperature<i class="big thermometer half icon"></i></h3>
-                    <p>${_station.newestReading()?.temperature} C</p>
-                    <p>${_station.newestReading()?.getTempFaren()} F</p>
-                    <p>Max ${_station.maxTemps()?.temperature}</p>
-                    <p>Min ${_station.minTemps()?.temperature}</p>
-                    <i class="${_station.temperatureTrends()}"></i>
+                <div class="ui teal card">
+                    <div class="content">
+                        <i class="right floated ${_station.temperatureTrends()}"></i>
+                        <i class="right floated big thermometer half icon"></i>
+                        <div class="header">Temp</div>
+                        <div class="ui section divider"></div>
+                        <div class="description">
+                            <p>${_station.newestReading()?.temperature} C</p>
+                            <p>${_station.newestReading()?.getTempFaren()} F</p>
+                            <p>Max ${_station.maxTemps()?.temperature}</p>
+                            <p>Min ${_station.minTemps()?.temperature}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">
-                    <h3>Wind <i class="big wind icon"></i></h3>
-                    <p>${_station.newestReading()?.getBeaufort()} bft</p>
-                    <p>${_station.newestReading()?.getWindDirect()}</p>
-                    <p>Feels Like ${_station.newestReading()?.getWindChill()}</p>
-                    <p>Max ${_station.maxWinds()?.windSpeed}</p>
-                    <p>Min ${_station.minWinds()?.windSpeed}</p>
-                    <i class="${_station.windSpeedTrends()}"></i>
+                <div class="ui teal card">
+                    <div class="content">
+                        <i class="right floated ${_station.windSpeedTrends()}"></i>
+                        <i class="right floated big wind icon"></i>
+                        <div class="header">Wind</div>
+                        <div class="ui section divider"></div>
+                        <div class="description">
+                            <p>${_station.newestReading()?.getBeaufort()} bft</p>
+                            <p>${_station.newestReading()?.getWindDirect()}</p>
+                            <p>Feels Like ${_station.newestReading()?.getWindChill()}</p>
+                            <p>Max ${_station.maxWinds()?.windSpeed}</p>
+                            <p>Min ${_station.minWinds()?.windSpeed}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column">
-                <div class="ui blue inverted segment">
-                    <h3>Pressure<i class="big compress arrows alternate icon"></i></h3>
-                    <p>${_station.newestReading()?.pressure} hpa</p>
-                    <p>Max ${_station.maxPressures()?.pressure}</p>
-                    <p>Min ${_station.minPressures()?.pressure}</p>
-                    <i class="${_station.pressureTrends()}"></i>
+                <div class="ui teal card">
+                    <div class="content">
+                        <i class="right floated ${_station.pressureTrends()}"></i>
+                        <i class="right floated big compress arrows alternate icon"></i>
+                        <div class="header">Pressure</div>
+                        <div class="ui section divider"></div>
+                        <div class="description">
+                            <p>${_station.newestReading()?.pressure} hpa</p>
+                            <p>Max ${_station.maxPressures()?.pressure}</p>
+                            <p>Min ${_station.minPressures()?.pressure}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

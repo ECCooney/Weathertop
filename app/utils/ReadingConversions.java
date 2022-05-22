@@ -9,7 +9,7 @@ public class ReadingConversions {
     return (int) (num * 1000) / 1000.0;
   }
 
-  public static double shortLat(double latitude){
+  public static double shortLat(double latitude) {
     double latitde = latitude;
     return toThreeDecimalPlaces(latitde);
   }

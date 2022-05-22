@@ -3,18 +3,28 @@
 
 #{menu id:"account"/}
 
-<section class="ui segment">
-    <h2 class="ui header">
-        Account Details
-    </h2>
-    <p>${member.firstname} ${member.lastname}</p>
-    <p>${member.email}</p>
-</section>
-
-<div class="ui two column middle aligned grid basic segment">
-    <div class="column">
-        <form class="ui stacked segment form" action="/editMember" method="POST">
-            <h3 class="ui header">Update Account Details</h3>
+<style>
+    .column {
+        margin-top: 50px;
+    }
+</style>
+<div class="ui two column middle aligned center aligned grid">
+    <div class="three wide column">
+        <div class="ui fluid teal card">
+            <div class="image">
+                <img src="public/images/defaultAvatar.png">
+            </div>
+            <div class ="content">
+        <h2 class="ui header">
+            ${member.firstname} ${member.lastname}
+        </h2>
+        <p><b>Email:</b> ${member.email}</p>
+            </div>
+        </div>
+    </div>
+    <div class="6 wide column">
+        <h1 class="ui teal header">Update Details</h1>
+        <form class="ui left floated segment form" action="/editMember" method="POST">
             <div class="two fields">
             <div class="field">
                 <label>New First Name</label>
@@ -29,11 +39,9 @@
                 <label>New Email</label> <input placeholder="${member.email}" name="email">
             </div>
             <div class="field">
-                <label>Password</label> <input type="${member.password}" name="password">
+                <label>Password</label> <input type="password" name="password">
             </div>
-            <button class="ui blue submit button">Update Details</button>
+            <button class="ui teal submit button">Update Details</button>
         </form>
-    </div>
-    <div class="column">
     </div>
 </div>

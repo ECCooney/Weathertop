@@ -1,10 +1,45 @@
 #{extends 'main.html' /}
 #{set title:'Start' /}
 
-#{welcomemenu id:"start"/}
+<div class="masthead-background">
+    #{welcomemenu id:"start"/}
+    <div class="ui vertical masthead center aligned segment">
+        <a class="ui inverted text container">
+            <h1 class="ui inverted header">
+                Weathertop
+            </h1>
+            <h2 class="ui inverted header">Your Weather App</h2>
+            <br>
+            <a href="/about" class="ui huge button">Our Story<i class="right arrow icon"></i></a>
+    </div>
+</div>
 
-<section class="ui container">
-    <p>
-        <img class="ui fluid image" src="/public/images/clouds.png"/>
-    </p>
-</section>
+<div class="ui container">
+    <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+            <div class="row">
+                <div class="eight wide column">
+                    <h2 class="ui header">Weathertop Online</h2>
+                    <p>Weathertop Online extends the usage of the popular Weathertop reading device to a personalised
+                        cloud based dashboard. Now you can have access to all historical readings, your own
+                        personalised list of stations, trends and a handy visual representation of the date from your
+                        machine
+                    </p>
+                    <h2 class="ui header">Getting Started</h2>
+                    <p>Once you've registered, calibrated and started using your Weathertop device, create an account
+                        here. All you need is an email and password.
+                        Once logged in, you can create the list of weather stations that suit you, and within those
+                        stations
+                        you can input the data from each device reading. The easy to use dashboard will track
+                        your reading history</p>
+                </div>
+                <div class="six wide right floated teal column">
+                    <div class="ui fluid image">
+                        <div class="ui teal ribbon label">Sample</div>
+                        <img src="/public/images/StationSample.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,45 +17,45 @@ public class MinMaxReadings {
     return maxTemp;
   }
 
-  public static Reading getMinTemp(List<Reading> readings){
+  public static Reading getMinTemp(List<Reading> readings) {
     Reading minTemp = null;
-    if (readings.size()>0) {
-     minTemp = Collections.min
-        (readings, Comparator.comparing(reading -> reading.temperature));
+    if (readings.size() > 0) {
+      minTemp = Collections.min
+          (readings, Comparator.comparing(reading -> reading.temperature));
     }
     return minTemp;
   }
 
-  public static Reading getMaxWind(List<Reading> readings){
+  public static Reading getMaxWind(List<Reading> readings) {
     Reading maxWind = null;
-    if (readings.size()>0) {
+    if (readings.size() > 0) {
       maxWind = Collections.max
           (readings, Comparator.comparing(reading -> reading.windSpeed));
     }
     return maxWind;
   }
 
-  public static Reading getMinWind(List<Reading> readings){
+  public static Reading getMinWind(List<Reading> readings) {
     Reading minWind = null;
-    if (readings.size()>0) {
+    if (readings.size() > 0) {
       minWind = Collections.min
           (readings, Comparator.comparing(reading -> reading.windSpeed));
     }
-      return minWind;
+    return minWind;
   }
 
-  public static Reading getMaxPressure(List<Reading> readings){
+  public static Reading getMaxPressure(List<Reading> readings) {
     Reading maxPressure = null;
-    if (readings.size()>0) {
+    if (readings.size() > 0) {
       maxPressure = Collections.max
           (readings, Comparator.comparing(reading -> reading.pressure));
     }
     return maxPressure;
   }
 
-  public static Reading getMinPressure(List<Reading> readings){
+  public static Reading getMinPressure(List<Reading> readings) {
     Reading minPressure = null;
-    if (readings.size()>0) {
+    if (readings.size() > 0) {
       minPressure = Collections.min
           (readings, Comparator.comparing(reading -> reading.pressure));
     }
